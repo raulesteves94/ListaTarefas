@@ -16,7 +16,7 @@
                 @Html.DisplayNameFor(model => model.Nome)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.descricao)
+                @Html.DisplayNameFor(model => model.Descricao)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Inicio)
@@ -37,7 +37,7 @@
                 @Html.DisplayFor(modelItem => item.Nome)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.descricao)
+                @Html.DisplayFor(modelItem => item.Descricao)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Inicio)
@@ -45,6 +45,28 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Fim)
             </td>
+
+            @if (item.Importancia == "Baixa")
+            {
+                <td class="text-info">
+                    @Html.DisplayFor(modelItem => item.Importancia)
+                </td>
+            }
+
+            @if (item.Importancia == "Média")
+            {
+                <td class="text-warning">
+                    @Html.DisplayFor(modelItem => item.Importancia)
+                </td>
+            } 
+            
+            @if (item.Importancia == "Alta")
+            {
+                <td class="text-danger">
+                    @Html.DisplayFor(modelItem => item.Importancia)
+                </td>
+            }
+
             <td>
                 @Html.DisplayFor(modelItem => item.Importancia)
             </td>
